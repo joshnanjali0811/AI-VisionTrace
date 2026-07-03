@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VisionTrace AI v2.0</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="/static/css/dashboard.css">
+</head>
+<body>
+<div class="ribbon"><h1>VisionTrace AI v2.0</h1></div>
+
+<div class="header-buttons">
+    <button class="nav-btn active" onclick="showPage('upload',event)">📤 Upload</button>
+    <button class="nav-btn" onclick="showPage('factors',event)">📊 Factors</button>
+    <button class="nav-btn" onclick="showPage('trend',event)">📈 Trend Count</button>
+    <button class="nav-btn" onclick="showPage('distribution',event)">📉 Distribution</button>
+    <button class="nav-btn" onclick="showPage('history',event)">🕒 History</button>
+    <button class="nav-btn" onclick="showPage('safety',event)">🛡 Safety</button>
+</div>
+
+<div class="container">
+    <div class="page active" id="upload">
+        <div class="upload-card">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📤</div>
+                <p>Click to Upload Image / Video</p>
+                <p>JPG • PNG • MP4</p>
+                <input type="file" id="fileInput" accept="image/*,video/mp4">
+            </div>
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>AI Processing...</p>
+            </div>
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <div class="page" id="factors">
+        <div class="factors-card">
+            <h2>FACTORS</h2>
+            <div class="factors-grid">
+                <div class="factor-item"><span class="factor-icon">🚗</span><div class="factor-number" id="totalVehicles">0</div><div>Total Vehicles</div></div>
+                <div class="factor-item"><span class="factor-icon">🎯</span><div class="factor-number" id="avgConfidence">0%</div><div>Avg Confidence</div></div>
+                <div class="factor-item"><span class="factor-icon">⏱</span><div class="factor-number" id="procTime">0s</div><div>Processing Time</div></div>
+                <div class="factor-item"><span class="factor-icon">🚦</span><div class="factor-number" id="trafficSoon">Normal</div><div>Traffic Status</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page" id="trend">
+        <div class="chart-container">
+            <h2>📈 TREND COUNT</h2>
+            <canvas id="trendChart"></canvas>
+        </div>
+    </div>
+
+    <div class="page" id="distribution">
+        <div class="chart-container">
+            <h2>📊 DISTRIBUTION</h2>
+            <canvas id="distChart"></canvas>
+        </div>
+    </div>
+
+    <div class="page" id="history">
+        <div class="chart-container">
+            <h2>🕒 HISTORY</h2>
+            <div id="historyTable"></div>
+        </div>
+    </div>
+
+    <div class="page" id="safety">
+        <div class="safety-card">
+            <h2>🛡 SAFETY TIPS</h2>
+            <ul class="safety-list">
+                <li>🪖 Always wear a helmet while riding.</li>
+                <li>🔒 Always wear your seat belt.</li>
+                <li>🚦 Follow traffic signals.</li>
+                <li>🚘 Maintain safe distance.</li>
+                <li>📵 Never use phone while driving.</li>
+                <li>⚡ Drive within speed limit.</li>
+                <li>🌧 Slow down during rain.</li>
+                <li>🚸 Watch for pedestrians.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>Crafted by Joshnanjali❤️</footer>
+</div>
+<script src="/static/js/dashboard.js"></script>
+</body>
+</html>

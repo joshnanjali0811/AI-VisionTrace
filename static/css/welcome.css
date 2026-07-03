@@ -1,0 +1,579 @@
+/* ==========================================
+   VisionTrace AI Welcome Page
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    overflow:hidden;
+
+    width:100vw;
+
+    height:100vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:linear-gradient(
+        135deg,
+        #020617,
+        #0f172a,
+        #1e293b
+    );
+
+}
+
+/* ==========================================
+   Animated Background
+========================================== */
+
+.gradient-bg{
+
+    position:fixed;
+
+    inset:0;
+
+    background:linear-gradient(
+        -45deg,
+        #0f172a,
+        #1e293b,
+        #111827,
+        #dc2626
+    );
+
+    background-size:400% 400%;
+
+    animation:gradientMove 15s ease infinite;
+
+    z-index:-2;
+
+}
+
+@keyframes gradientMove{
+
+    0%{
+
+        background-position:0% 50%;
+
+    }
+
+    50%{
+
+        background-position:100% 50%;
+
+    }
+
+    100%{
+
+        background-position:0% 50%;
+
+    }
+
+}
+
+/* ==========================================
+   Floating Glow
+========================================== */
+
+.gradient-bg::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at 20% 20%,
+    rgba(239,68,68,.25),
+    transparent 30%),
+
+    radial-gradient(circle at 80% 30%,
+    rgba(59,130,246,.18),
+    transparent 30%),
+
+    radial-gradient(circle at 50% 90%,
+    rgba(16,185,129,.15),
+    transparent 35%);
+
+}
+
+/* ==========================================
+   Particles
+========================================== */
+
+.particles{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+}
+
+.particles::before,
+.particles::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:5px;
+
+    height:5px;
+
+    border-radius:50%;
+
+    background:white;
+
+    opacity:.35;
+
+    box-shadow:
+
+    120px 200px white,
+
+    250px 120px white,
+
+    400px 320px white,
+
+    620px 80px white,
+
+    800px 420px white,
+
+    1000px 200px white,
+
+    300px 500px white,
+
+    900px 600px white;
+
+    animation:particlesMove 20s linear infinite;
+
+}
+
+@keyframes particlesMove{
+
+    from{
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        transform:translateY(-900px);
+
+    }
+
+}
+/* ==========================================
+   Welcome Container
+========================================== */
+
+.welcome-container{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:20px;
+
+}
+
+/* ==========================================
+   Glass Card
+========================================== */
+
+.glass-card{
+
+    width:100%;
+
+    max-width:560px;
+
+    padding:45px;
+
+    border-radius:28px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.35);
+
+    animation:cardAppear 1s ease;
+
+}
+
+@keyframes cardAppear{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px) scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0) scale(1);
+
+    }
+
+}
+
+/* ==========================================
+   Logo
+========================================== */
+
+.logo-container{
+
+    margin-bottom:20px;
+
+}
+
+.logo-icon{
+
+    width:90px;
+
+    height:90px;
+
+    margin:0 auto 15px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:42px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#dc2626,#ef4444);
+
+    box-shadow:0 0 30px rgba(239,68,68,.5);
+
+    animation:logoFloat 3s ease-in-out infinite;
+
+}
+
+@keyframes logoFloat{
+
+    0%,100%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+}
+
+.logo-text{
+
+    font-size:2.6rem;
+
+    font-weight:700;
+
+    color:#ffffff;
+
+    letter-spacing:1px;
+
+}
+
+/* ==========================================
+   Title
+========================================== */
+
+.main-title{
+
+    font-size:1.5rem;
+
+    color:#f87171;
+
+    margin:15px 0 10px;
+
+}
+
+.subtitle{
+
+    color:#d1d5db;
+
+    font-size:15px;
+
+    margin-bottom:30px;
+
+}
+
+/* ==========================================
+   Features
+========================================== */
+
+.features{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    margin-bottom:35px;
+
+}
+
+.feature-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:14px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.05);
+
+    transition:.3s;
+
+}
+
+.feature-item:hover{
+
+    transform:translateX(8px);
+
+    background:rgba(239,68,68,.12);
+
+}
+
+.feature-icon{
+
+    font-size:24px;
+
+}
+/* ==========================================
+   Enter Button
+========================================== */
+
+.enter-btn{
+
+    width:100%;
+
+    padding:16px 24px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    color:#ffffff;
+
+    font-size:17px;
+
+    font-weight:700;
+
+    background:linear-gradient(
+        135deg,
+        #dc2626,
+        #ef4444
+    );
+
+    box-shadow:
+    0 12px 35px rgba(239,68,68,.35);
+
+    transition:.35s;
+
+}
+
+.enter-btn:hover{
+
+    transform:translateY(-4px) scale(1.02);
+
+    box-shadow:
+    0 18px 45px rgba(239,68,68,.55);
+
+}
+
+.enter-btn:active{
+
+    transform:scale(.97);
+
+}
+
+.arrow-icon{
+
+    width:22px;
+
+    height:22px;
+
+    transition:.35s;
+
+}
+
+.enter-btn:hover .arrow-icon{
+
+    transform:translateX(8px);
+
+}
+
+/* ==========================================
+   Glass Glow Animation
+========================================== */
+
+.glass-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-2px;
+
+    border-radius:30px;
+
+    padding:2px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(239,68,68,.45),
+        rgba(59,130,246,.30),
+        rgba(16,185,129,.30)
+    );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+    pointer-events:none;
+
+}
+
+/* Required because ::before is absolute */
+
+.glass-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width:768px){
+
+    .glass-card{
+
+        padding:30px 20px;
+
+    }
+
+    .logo-text{
+
+        font-size:2rem;
+
+    }
+
+    .main-title{
+
+        font-size:1.25rem;
+
+    }
+
+    .subtitle{
+
+        font-size:14px;
+
+    }
+
+    .logo-icon{
+
+        width:75px;
+
+        height:75px;
+
+        font-size:34px;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .logo-text{
+
+        font-size:1.7rem;
+
+    }
+
+    .feature-item{
+
+        font-size:14px;
+
+    }
+
+    .enter-btn{
+
+        font-size:15px;
+
+        padding:14px 18px;
+
+    }
+
+}
+
+/* ==========================================
+   Text Selection
+========================================== */
+
+::selection{
+
+    background:#ef4444;
+
+    color:#ffffff;
+
+}

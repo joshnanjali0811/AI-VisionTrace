@@ -1,0 +1,8 @@
+.idea/
+__pycache__/
+*.pyc
+runs/
+venv/
+*.pt
+*.h5
+.DS_Store
